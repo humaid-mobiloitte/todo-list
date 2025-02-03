@@ -15,6 +15,10 @@ function MainComponent() {
     function handleClick(newTask){
         return setTasks((prevTasks)=>[...prevTasks,newTask])
     }
+
+    function handleDelete(index){
+        setTasks((prevTasks)=>prevTasks.filter((__,i) => i != index))
+    }
   return (
     <Container maxWidth="sm" sx={{ flex: 1, mt: 4 }}>
         {/* YE INPUT LENE K LIYE */}
@@ -29,7 +33,7 @@ function MainComponent() {
                             {/* TASK YHA LIKHA HUA AYEGA */}
                             {task}
                         </Typography>
-                        <DeleteIcon />
+                        <DeleteIcon onClick={()=>handleDelete(i)} sx={{cursor:'pointer'}}/>
                     </CardContent>
 
                 )
