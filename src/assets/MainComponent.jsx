@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Card, CardContent, Typography} from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete';    
 import InputField from './inputField'
 import { useState } from 'react'
 
@@ -23,12 +24,14 @@ function MainComponent() {
         <Card sx={{ backgroundColor: '#f5f5f5', boxShadow: 3 }}>
             {tasks.map((task,i)=>{
                 return(
-                    <CardContent style={{ display: 'flex', flexDirection: 'column', alignItems:'center',gap:'15px'}}>
-                        <Typography variant="h5" sx={{ mb: 2 }}>
-                        {/* TASK YHA LIKHA HUA AYEGA */}
+                    <CardContent style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', width: '100%' }}>
+                        <Typography variant="subtitle1" sx={{ mb: 2, flex: 1 }}>
+                            {/* TASK YHA LIKHA HUA AYEGA */}
                             {task}
                         </Typography>
+                        <DeleteIcon />
                     </CardContent>
+
                 )
             })}
         </Card>
